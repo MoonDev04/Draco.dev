@@ -1,6 +1,7 @@
 document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
-        button.nextElementSibling.classList.toggle('faq-answer');
+        const answer = button.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
         button.classList.toggle('active');
     });
 });
