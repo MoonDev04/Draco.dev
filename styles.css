@@ -4,6 +4,7 @@ body, html {
     font-family: Arial, sans-serif;
     color: white;
     background-color: #121212;
+    overflow-x: hidden;
 }
 
 header {
@@ -72,7 +73,7 @@ h1 {
 
 .faq-question {
     width: 100%;
-    background-color: grey;
+    background-color: #2a2a2a;
     color: white;
     padding: 15px;
     border: none;
@@ -81,11 +82,11 @@ h1 {
     outline: none;
     margin-top: 10px;
     border-radius: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .faq-question:hover {
-    background-color: darkgrey;
+    background-color: #1e1e1e;
 }
 
 .faq-answer {
@@ -94,6 +95,7 @@ h1 {
     background-color: #333;
     border-radius: 10px;
     margin-top: 5px;
+    transition: max-height 0.3s ease;
 }
 
 .panel-section {
@@ -112,17 +114,25 @@ h1 {
 }
 
 .panel-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    border-radius: 15px;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .panel-content {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
-    padding: 50px 20px;
+    text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
+    padding: 20px;
 }
 
 .panel-content h2 {
